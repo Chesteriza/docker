@@ -1,0 +1,12 @@
+version: "3.9"
+services:
+  glue:
+    build: . 
+    command: ["sh" , "/home/jupyter/jupyter_start.sh", "-p", "8888:8888", "-p", "4040:4040"]
+    volumes:
+      - "$AWS:/root/.aws:rw"
+      # - "$NOTEBOOK_PATH:root/.aws"
+    ports:
+      - "8888:8888"
+      - "4040:4040"
+
